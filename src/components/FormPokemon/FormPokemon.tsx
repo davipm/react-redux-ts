@@ -38,6 +38,9 @@ function FormPokemon() {
         <button type="submit" className="btn btn-primary mb-2">Search</button>
       </form>
 
+      {pokemonState.loading && <h3 className="text-center">Loading</h3>}
+      {pokemonState.error && <h3 className="text-center">Error</h3>}
+
       {pokemonState.pokemon && (
         <PokemonItem {...pokemonState.pokemon} />
       )}
