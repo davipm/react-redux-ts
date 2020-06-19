@@ -8,6 +8,7 @@ import {
 
 interface DefaultStateI {
   loading: boolean
+  error?: boolean
   pokemon?: PokemonsType
 }
 
@@ -19,7 +20,8 @@ export const pokemonReducers = (state: DefaultStateI = defaultState, action: Pok
   switch (action.type) {
     case POKEMON_FAIL:
       return {
-        loading: false
+        loading: false,
+        error: true
       }
     case POKEMON_LOADING:
       return {
