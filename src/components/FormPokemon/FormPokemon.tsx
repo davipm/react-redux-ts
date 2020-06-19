@@ -7,7 +7,7 @@ import PokemonItem from "../PokemonItem";
 
 function FormPokemon() {
   const dispatch = useDispatch();
-  const pokemonState = useSelector((state: RootStore) => state.pokemon);
+  const { pokemon, loading, error } = useSelector((state: RootStore) => state.pokemon);
   const [pokemonName, setPokemonName] = useState('');
 
   function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
@@ -38,11 +38,11 @@ function FormPokemon() {
         <button type="submit" className="btn btn-primary mb-2">Search</button>
       </form>
 
-      {pokemonState.loading && <h3 className="text-center">Loading</h3>}
-      {pokemonState.error && <h3 className="text-center">Error</h3>}
+      {loading && <h3 className="text-center">Loading</h3>}
+      {error && <h3 className="text-center">Error</h3>}
 
-      {pokemonState.pokemon && (
-        <PokemonItem {...pokemonState.pokemon} />
+      {pokemon && (
+        <PokemonItem {...pokemon} />
       )}
     </>
   );
