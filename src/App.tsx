@@ -5,9 +5,9 @@ import FormPokemon from "./components/FormPokemon";
 function App() {
   return (
     <div id="app">
-      <div className="container mt-5">
+      <section className="container mt-5">
         <FormPokemon />
-      </div>
+      </section>
     </div>
   );
 }
