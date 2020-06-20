@@ -22,24 +22,24 @@ function FormPokemon() {
 
   return (
     <>
-      <form onSubmit={handleSubmit} className="form-inline justify-content-center">
-        <div className="form-group mx-sm-3 mb-2">
-          <label htmlFor="pokemonName" className="sr-only">Search Pokemons</label>
+      <form onSubmit={handleSubmit} className="form">
+        <div className="form__group">
+          <label htmlFor="pokemonName" className="sr-only">Search Pokemon</label>
           <input
             type="text"
             onChange={handleChange}
             value={pokemonName}
-            className="form-control"
+            className="form__control"
             id="pokemonName"
             placeholder="Search Pokemon"
             required
           />
         </div>
-        <button type="submit" className="btn btn-primary mb-2">Search</button>
+        <button type="submit" className="btn">Search</button>
       </form>
 
-      {loading && <h3 className="text-center">Loading</h3>}
-      {error && <h3 className="text-center">Error</h3>}
+      {loading && <h3>Loading</h3>}
+      {error && <h3>Error</h3>}
 
       {pokemon && (
         <PokemonItem {...pokemon} />

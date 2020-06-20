@@ -1,4 +1,3 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import thunk from "redux-thunk";
@@ -7,6 +6,7 @@ import {applyMiddleware, createStore} from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import './styles/styles.css';
 
 import rootReducers from './store/reducers'
 
